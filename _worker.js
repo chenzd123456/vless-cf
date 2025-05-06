@@ -114,31 +114,31 @@ export default {
 	},
 };
 
-export async function uuid_validator(request) {
-	const hostname = request.headers.get('Host');
-	const currentDate = new Date();
+// export async function uuid_validator(request) {
+// 	const hostname = request.headers.get('Host');
+// 	const currentDate = new Date();
 
-	const subdomain = hostname.split('.')[0];
-	const year = currentDate.getFullYear();
-	const month = String(currentDate.getMonth() + 1).padStart(2, '0');
-	const day = String(currentDate.getDate()).padStart(2, '0');
+// 	const subdomain = hostname.split('.')[0];
+// 	const year = currentDate.getFullYear();
+// 	const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+// 	const day = String(currentDate.getDate()).padStart(2, '0');
 
-	const formattedDate = `${year}-${month}-${day}`;
+// 	const formattedDate = `${year}-${month}-${day}`;
 
-	// const daliy_sub = formattedDate + subdomain
-	const hashHex = await generateHashHex(subdomain);
-	// subdomain string contains timestamps utc and uuid string TODO.
-	console.log(hashHex, subdomain, formattedDate);
-}
+// 	// const daliy_sub = formattedDate + subdomain
+// 	const hashHex = await generateHashHex(subdomain);
+// 	// subdomain string contains timestamps utc and uuid string TODO.
+// 	console.log(hashHex, subdomain, formattedDate);
+// }
 
-export async function generateHashHex(string) {
-	const encoder = new TextEncoder();
-	const data = encoder.encode(string);
-	const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-	const hashArray = Array.from(new Uint8Array(hashBuffer));
-	const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
-	return hashHex;
-}
+// export async function generateHashHex(string) {
+// 	const encoder = new TextEncoder();
+// 	const data = encoder.encode(string);
+// 	const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+// 	const hashArray = Array.from(new Uint8Array(hashBuffer));
+// 	const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+// 	return hashHex;
+// }
 
 /**
  * Handles vless over WebSocket requests by creating a WebSocket pair, accepting the WebSocket connection, and processing the vless header.

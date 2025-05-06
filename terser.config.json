@@ -1,0 +1,34 @@
+{
+  "compress": {
+    "sequences": true,
+    "dead_code": true,
+    "conditionals": true,
+    "booleans": true,
+    "unused": true,
+    "if_return": true,
+    "join_vars": true,
+    "drop_console": false,
+    "keep_fargs": false,
+    "keep_fnames": false,
+    "passes": 3
+  },
+  "mangle": {
+    "toplevel": true,
+    "keep_classnames": false,
+    "keep_fnames": false,
+    "reserved": [
+      "connect",
+      "fetch",
+      "Response",
+      "Request",
+      "URL",
+      "WebSocketPair",
+      "crypto"
+    ]
+  },
+  "output": {
+    "comments": false,
+    "beautify": false
+  },
+  "sourceMap": false
+}
