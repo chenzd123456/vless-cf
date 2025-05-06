@@ -1,4 +1,4 @@
-name = "vless-cf"
+name = "px"
 #name = "cf-worker-connect-test" # todo
 #main = "test/worker/cf-cdn-cgi-trace2.js"
 #main = "test/worker/worker-connect-test.js"
@@ -13,3 +13,7 @@ compatibility_date = "2025-02-24"
 # API_TOKEN = "example_dev_token"
 # API_HOST = "api.v2board.com"
 UUID = "d1f57dee-a67c-46ce-b785-ac03cd3121d8"
+
+[observability]
+enabled = true
+head_sampling_rate = 1 # optional. default = 1.
